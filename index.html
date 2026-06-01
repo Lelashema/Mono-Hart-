@@ -1,9 +1,8 @@
-
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Моно Харт - Тату салон</title>
     <link href="https://fonts.cdnfonts.com/css/ag-reverence" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -262,6 +261,7 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+            flex-wrap: wrap;
         }
         
         .logo-container {
@@ -307,6 +307,7 @@
             justify-content: center;
             list-style: none;
             margin: 0 20px;
+            flex-wrap: wrap;
         }
         
         .header-nav ul li {
@@ -923,6 +924,8 @@
             justify-content: center;
             color: #fff;
             font-family: "AGReverence Roman Medium", serif;
+            flex-wrap: wrap;
+            word-break: break-word;
         }
         
         .contact-item i {
@@ -965,6 +968,7 @@
             display: flex;
             justify-content: center;
             margin-top: 30px;
+            flex-wrap: wrap;
         }
         
         .social-links a {
@@ -1101,6 +1105,8 @@
             margin-bottom: 30px;
             padding-bottom: 20px;
             border-bottom: 1px solid var(--light-gray);
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         .profile-avatar {
@@ -1146,6 +1152,7 @@
             gap: 10px;
             margin-top: 30px;
             flex-wrap: wrap;
+            justify-content: center;
         }
         
         .profile-btn {
@@ -1197,6 +1204,8 @@
             justify-content: space-between;
             align-items: center;
             transition: all 0.3s;
+            flex-wrap: wrap;
+            gap: 10px;
         }
         
         .appointment-item:hover {
@@ -1217,6 +1226,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            flex-wrap: wrap;
         }
         
         .appointment-status span {
@@ -1298,6 +1308,8 @@
             width: 100%;
             border-collapse: collapse;
             margin-top: 20px;
+            overflow-x: auto;
+            display: block;
         }
         
         .admin-table th, .admin-table td {
@@ -1320,6 +1332,8 @@
             display: flex;
             gap: 10px;
             margin-top: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         /* Scroll to top button */
@@ -1747,6 +1761,7 @@
             align-items: center;
             gap: 10px;
             margin-top: 10px;
+            flex-wrap: wrap;
         }
         
         .request-status span {
@@ -1825,6 +1840,7 @@
             align-items: center;
             gap: 10px;
             margin-top: 10px;
+            flex-wrap: wrap;
         }
         
         .request-status-user span {
@@ -2101,6 +2117,8 @@
             justify-content: space-between;
             align-items: center;
             margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
         }
         
         .news-item-title {
@@ -2133,6 +2151,7 @@
             gap: 15px;
             color: #777;
             font-size: 14px;
+            flex-wrap: wrap;
         }
         
         .news-item-stats i {
@@ -2146,7 +2165,7 @@
             font-family: "AGReverence Roman Medium", serif;
         }
         
-        /* Responsive */
+        /* Responsive - Mobile First */
         @media (max-width: 1200px) {
             .container {
                 padding: 0 40px;
@@ -2205,21 +2224,25 @@
                 width: 100%;
                 margin: 15px 0;
                 order: 2;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
             }
             
             .header-nav ul {
-                flex-wrap: wrap;
-                justify-content: center;
+                flex-wrap: nowrap;
+                justify-content: flex-start;
+                padding-bottom: 5px;
             }
             
             .header-nav ul li {
-                margin: 5px;
+                margin: 0 5px;
             }
             
             .auth-buttons {
                 width: 100%;
                 justify-content: center;
                 order: 3;
+                flex-wrap: wrap;
             }
             
             .services-grid {
@@ -2250,13 +2273,6 @@
                 max-width: 250px;
             }
             
-            .chat-bot-modal {
-                width: 300px;
-                height: 450px;
-                left: 50%;
-                transform: translateX(-50%);
-            }
-            
             .quick-questions {
                 grid-template-columns: 1fr;
             }
@@ -2277,26 +2293,54 @@
             .gallery-fullscreen-item {
                 height: 200px;
             }
+            
+            .gallery-modal-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .gallery-modal-item {
+                height: 200px;
+            }
+            
+            .chat-bot-modal {
+                width: calc(100% - 40px);
+                left: 20px;
+                right: 20px;
+                transform: none;
+            }
+            
+            .admin-table {
+                font-size: 12px;
+            }
+            
+            .admin-table th, .admin-table td {
+                padding: 8px 10px;
+            }
         }
         
         @media (max-width: 576px) {
             .container {
-                padding: 0 20px;
+                padding: 0 15px;
             }
             
             .banner-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .banner-subtitle {
-                font-size: 1rem;
+                font-size: 0.9rem;
             }
             
             .section-title {
-                font-size: 28px;
+                font-size: 24px;
             }
             
-            .calculator-content, .discount-content {
+            .about-text {
+                font-size: 16px;
+                padding: 0 10px;
+            }
+            
+            .calculator-content, .discount-content, .service-modal-content, .master-modal-content {
                 padding: 20px;
             }
             
@@ -2320,6 +2364,103 @@
             
             .gallery-fullscreen-item {
                 height: 150px;
+            }
+            
+            .gallery-modal-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+            
+            .gallery-modal-item {
+                height: 150px;
+            }
+            
+            .contact-item {
+                font-size: 14px;
+                text-align: center;
+            }
+            
+            .profile-container, .auth-container {
+                padding: 20px;
+                margin: 80px 15px 30px;
+            }
+            
+            .profile-actions {
+                flex-direction: column;
+            }
+            
+            .profile-actions .profile-btn {
+                width: 100%;
+            }
+            
+            .admin-actions {
+                flex-direction: column;
+            }
+            
+            .admin-actions .profile-btn {
+                width: 100%;
+            }
+            
+            .option-label {
+                font-size: 14px;
+            }
+            
+            .step-indicator {
+                font-size: 14px;
+            }
+            
+            .calculator-title, .discount-title {
+                font-size: 20px;
+            }
+            
+            .discount-badge {
+                font-size: 18px;
+                padding: 12px 20px;
+            }
+            
+            .appointment-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .appointment-status {
+                justify-content: center;
+            }
+            
+            .news-item-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .gallery-fullscreen-back {
+                top: 10px;
+                left: 10px;
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            
+            .gallery-fullscreen-title {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .banner-title {
+                font-size: 1.5rem;
+            }
+            
+            .auth-btn, .news-btn, .vk-post-btn {
+                padding: 6px 10px;
+                font-size: 12px;
+            }
+            
+            .header-nav ul li a, .header-nav ul li button {
+                font-size: 12px;
+                padding: 5px 8px;
+            }
+            
+            .news-item-stats {
+                justify-content: center;
             }
         }
         
@@ -3195,7 +3336,7 @@
             { src: "https://sun9-75.userapi.com/s/v1/ig2/NSYYByfKb3QkehzUjqX1-4wFocQGlTf4pbEZlZNWzcxvGJbX8Mvs0zxdB2HtYn6ir8i8TnQgCfQ3euL5Z7q38vs-.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,462x462&from=bu&cs=462x0", master: "Катя" },
             { src: "https://sun9-40.userapi.com/s/v1/ig2/DW-pc-18BfqAxc2A9JIZlmdEZbNlXMczqLZNrOZiieYdm6HaCVYF6ROmZXGZstcMPYGksH4JOAi6MA2UnvC-QB07.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,462x462&from=bu&cs=462x0", master: "Эрик" },
             { src: "https://sun9-74.userapi.com/s/v1/ig2/o621HHgczGezGcB-4Ua-7I_2isoGFTKa1MP8UQegn5Km7wCdP2ChlapD8YhsrQ0LC5QilkwfYXxcLWjbkEsSPHnG.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x241,360x361,462x463&from=bu&cs=462x0", master: "Анна" },
-    ];
+        ];
 
         // База знаний для чат-бота
         const botKnowledge = {
